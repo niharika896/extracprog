@@ -1,4 +1,4 @@
-//Magic Square
+//Magic Square Method 1
 #include <stdio.h>
 int main(){
 	int n; scanf("%d",&n);
@@ -26,3 +26,30 @@ int main(){
 	}
 	return 0;
 }
+
+// Method 2
+#include <stdio.h>
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    int a[n][n];
+    for(int i=0;i<n;i++)
+    for(int j=0;j<n;j++)a[i][j]=0;
+    int count=1;
+    int i=n/2,j=n-1;
+    while(count<=n*n){
+        a[i][j]=count++;
+        i--;j++;
+        if(i==-1 && j!=n)i=n-1;
+        else if(j==n && i!=-1)j=0;
+        else if(j==n && i==-1){i=0;j=n-2;}
+
+        if(a[i][j]!=0){i++;j-=2;}
+    };
+    for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++)printf("%d ",a[i][j]);
+    printf("\n");
+    }
+    return 0;
+} 
