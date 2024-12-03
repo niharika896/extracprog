@@ -7,7 +7,7 @@ void findAge(int current_date, int current_month,
 {  
 	int month[] = { 31, 0, 31, 30, 31, 30, 
 					31, 31, 30, 31, 30, 31 }; 
-    if(current_month%400==0 || (current_month%100!=0 && current_month%4==0)){
+    if(current_year%400==0 || (current_year%100!=0 && current_year%4==0)){
         month[1]=29;}
     else{
         month[1]=28;}
